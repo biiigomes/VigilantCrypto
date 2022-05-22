@@ -9,11 +9,11 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar5"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
         android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,11 +31,8 @@
 
     <EditText
         android:id="@+id/et_email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
         android:layout_marginTop="100dp"
-        android:layout_marginEnd="30dp"
+        style="@style/LoginStyleEdit"
         android:inputType="textPersonName"
         android:hint="E-mail"
         app:layout_constraintEnd_toEndOf="parent"
@@ -45,11 +42,8 @@
 
     <EditText
         android:id="@+id/et_password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
         android:layout_marginTop="16dp"
+        style="@style/LoginStyleEdit"
         android:inputType="textPersonName"
         android:hint="Password"
         app:layout_constraintEnd_toEndOf="parent"
@@ -59,31 +53,30 @@
 
     <Button
         android:id="@+id/access_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
-        android:text="Button"
+        android:text="Acessar"
         android:layout_marginHorizontal="90dp"
+        style="@style/LoginStyleButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_password" />
 
     <TextView
         android:id="@+id/tv_forgot_password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
         android:text="Esqueceu a Senha?"
+        android:layout_marginBottom="30dp"
+        android:textSize="@dimen/txt_size"
+        style="@style/LoginStyleText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/access_btn" />
 
     <TextView
         android:id="@+id/tv_create_account"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:text="Criar Conta"
+        android:layout_marginTop="10dp"
+        android:textSize="@dimen/txt_CriarConta"
+        style="@style/LoginStyleText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_forgot_password" />

@@ -7,14 +7,12 @@
     <style name="LoginStyleText">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">wrap_content</item>
-        <item name="android:textColor">#FF000000</item>
     </style>
     <style name="LoginStyleEdit">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_marginStart">30dp</item>
         <item name="android:layout_marginEnd">30dp</item>
-        <item name="android:textColor">#FF000000</item>
     </style>
     <style name="LoginStyleButton">
         <item name="android:layout_width">match_parent</item>

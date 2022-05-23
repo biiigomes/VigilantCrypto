@@ -2,14 +2,19 @@ package com.logtog.vigilantcrypto.ui.login
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.logtog.vigilantcrypto.data.database.RealTimeDatabase
 import com.logtog.vigilantcrypto.data.model.User
 import com.logtog.vigilantcrypto.databinding.ActivitySignUpBinding
+import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.android.synthetic.main.activity_sign_up.*
 
 @SuppressLint("StaticFieldLeak")
 private lateinit var binding : ActivitySignUpBinding
@@ -64,5 +69,40 @@ class SignUpActivity : AppCompatActivity() {
                 Toast.makeText(this, "Empty Field Are not Allowed !!", Toast.LENGTH_SHORT).show()
             }
         }
+
+        //Aplicando Dark Mode
+
+        val appSettingPrefix: SharedPreferences = getSharedPreferences("AppSettingPrefs", 0)
+        val NightModeOn: Boolean = appSettingPrefix.getBoolean("NightMode", false)
+        val sharedPref: SharedPreferences.Editor = appSettingPrefix.edit()
+
+        if(NightModeOn)
+        {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            darkMode.text = "Desabilitar modo escuro"
+        } else
+        {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            darkMode.text = "Habilitar modo escuro"
+
+        }
+
+        darkMode.setOnClickListener(View.OnClickListener {
+            if(NightModeOn)
+            {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                sharedPref.putBoolean("NightMode", false)
+                sharedPref.apply()
+                darkMode.text = "Habilitar modo escuro"
+            } else
+            {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                sharedPref.putBoolean("NightMode", true)
+                sharedPref.apply()
+
+                darkMode.text = "Desabilitar modo escuro"
+            }
+        })
+
     }
 }

@@ -1,13 +1,21 @@
 package com.logtog.vigilantcrypto.ui.login
 
 import android.content.Intent
+import android.content.SharedPreferences
+import android.content.res.Resources
 import android.os.Bundle
+import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import com.google.android.material.button.MaterialButtonToggleGroup
 import com.google.firebase.auth.FirebaseAuth
+import com.logtog.vigilantcrypto.R
 import com.logtog.vigilantcrypto.databinding.ActivityLoginBinding
 import com.logtog.vigilantcrypto.ui.presentation.MainActivity
+import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
 
